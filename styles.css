@@ -104,6 +104,10 @@ main,
   text-transform: none;
 }
 
+.mark-name {
+  color: var(--muted);
+}
+
 .pixel {
   width: 0.7rem;
   height: 0.7rem;
@@ -138,14 +142,16 @@ h1 {
 }
 
 .hero-orbit {
-  display: none;
+  display: block;
+  position: relative;
+  z-index: 2;
   margin: 1.1rem 0 0;
   width: 100%;
-  max-width: 20rem;
-  height: 7.5rem;
+  max-width: 22rem;
+  height: 8rem;
   border-radius: 1rem;
   border: 1px solid var(--line);
-  background: rgba(20, 18, 37, 0.55);
+  background: rgba(20, 18, 37, 0.72);
   box-shadow: var(--glow);
   overflow: hidden;
 }
@@ -270,16 +276,17 @@ h2 {
 }
 
 @media (max-width: 720px) {
-  .hero-orbit {
-    display: block;
-  }
-
   .sky {
-    opacity: 0.28;
+    opacity: 0.22;
   }
 
   .hero {
     margin-bottom: 1.35rem;
+  }
+
+  .hero-orbit {
+    max-width: 100%;
+    height: 8.5rem;
   }
 }
 
@@ -305,9 +312,5 @@ h2 {
 
   .sky {
     display: none;
-  }
-
-  .hero-orbit {
-    display: block;
   }
 }
