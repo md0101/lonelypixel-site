@@ -1,2 +1,1 @@
-# lonelypixel-site
-Lonely Pixel site
+Lonely Pixel studio site (GitHub Pages).

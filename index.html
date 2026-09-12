@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lonely Pixel — UK iOS apps · honest tools.">
+  <meta name="theme-color" content="#0b0a12">
+  <title>Lonely Pixel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0a12'/%3E%3Crect x='12' y='12' width='8' height='8' fill='%23f4f0ff'/%3E%3Ccircle cx='24' cy='8' r='2' fill='%237cf0c2'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="sky" aria-hidden="true">
+    <canvas id="orbit" width="800" height="600"></canvas>
+  </div>
+
+  <header class="top">
+    <p class="mark" aria-label="Lonely Pixel">
+      <span class="pixel" aria-hidden="true"></span>
+      Lonely Pixel
+    </p>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <p class="eyebrow">A small UK studio</p>
+      <h1>Lonely Pixel</h1>
+      <p class="tagline">UK iOS apps · honest tools</p>
+      <p class="lede">
+        Odd little apps for real pockets of life.
+        No hype stack. No dark patterns dressed as delight.
+      </p>
+    </section>
+
+    <section class="orbit-card" aria-labelledby="apps-heading">
+      <h2 id="apps-heading">In orbit</h2>
+      <ul class="apps">
+        <li>
+          <span class="dot clearscan" aria-hidden="true"></span>
+          <div>
+            <h3>ClearScan</h3>
+            <p>Document scanning that stays quiet and useful.</p>
+            <p class="status">Coming soon</p>
+          </div>
+        </li>
+        <li>
+          <span class="dot novashelf" aria-hidden="true"></span>
+          <div>
+            <h3>NovaShelf</h3>
+            <p>Honest free-from shelf sense for everyday shopping.</p>
+            <p class="status">Coming soon</p>
+          </div>
+        </li>
+        <li>
+          <span class="dot soon" aria-hidden="true"></span>
+          <div>
+            <h3>More pixels</h3>
+            <p>Further apps will drift into view when they’re ready.</p>
+            <p class="status">Quiet for now</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="note" aria-labelledby="note-heading">
+      <h2 id="note-heading">Studio note</h2>
+      <p>
+        Lonely Pixel is Mohit Dhawan’s UK iOS studio —
+        small releases, clear pricing, tools that respect your attention.
+      </p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>© <span id="year"></span> Lonely Pixel</p>
+    <p class="stubs">
+      <span>Contact — soon</span>
+      <span aria-hidden="true">·</span>
+      <a href="/privacy.html" style="color:inherit">Privacy</a>
+    </p>
+    <p class="domain">lonelypixel.app</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
