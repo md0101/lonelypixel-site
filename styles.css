@@ -201,6 +201,7 @@ h2 {
 .dot.clearscan { background: var(--mint); box-shadow: 0 0 16px rgba(124, 240, 194, 0.45); }
 .dot.novashelf { background: var(--lilac); box-shadow: 0 0 16px rgba(196, 168, 255, 0.45); }
 .dot.soon { background: var(--coral); box-shadow: 0 0 16px rgba(255, 143, 159, 0.35); }
+.dot.orpheus { background: #7ec8ff; box-shadow: 0 0 16px rgba(126, 200, 255, 0.45); }
 
 .apps h3 {
   margin: 0;
