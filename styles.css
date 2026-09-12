@@ -61,7 +61,7 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 #orbit {
@@ -82,9 +82,8 @@ main,
   padding-right: var(--pad-x);
 }
 
-/* Tight top: mark sits close to the big title */
 .top {
-  padding-top: 1.25rem;
+  padding-top: 1.5rem;
   padding-bottom: 0;
 }
 
@@ -97,6 +96,7 @@ main,
   font-size: 0.78rem;
   letter-spacing: 0.05em;
   color: var(--muted);
+  line-height: 1.4;
 }
 
 .mark-orbit {
@@ -118,12 +118,40 @@ main,
 }
 
 main {
-  padding-top: 0.85rem;
-  padding-bottom: 2.25rem;
+  padding-top: 1.35rem;
+  padding-bottom: 2.75rem;
 }
 
 .hero {
-  margin: 0 0 1.75rem;
+  margin: 0 0 2.5rem;
+}
+
+.hero-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+}
+
+.hero-copy {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.hero-stage {
+  flex: 0 0 auto;
+  width: min(42vw, 13.5rem);
+  height: 7.5rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+}
+
+#pixel-orbit {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 h1 {
@@ -135,26 +163,24 @@ h1 {
 }
 
 .tagline {
-  margin: 0.65rem 0 0;
+  margin: 0.85rem 0 0;
   font-size: clamp(1.05rem, 3.5vw, 1.3rem);
   color: var(--lilac);
   font-weight: 500;
 }
-
-
 
 .orbit-card {
   margin: 0;
   background: linear-gradient(160deg, rgba(20, 18, 37, 0.92), rgba(11, 10, 18, 0.85));
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.15rem 1.1rem;
+  padding: 1.25rem 1.15rem;
   box-shadow: var(--glow);
   backdrop-filter: blur(8px);
 }
 
 h2 {
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.95rem;
   font-size: 0.75rem;
   font-family: var(--mono);
   letter-spacing: 0.14em;
@@ -168,7 +194,7 @@ h2 {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.65rem;
+  gap: 0.9rem;
 }
 
 .apps li {
@@ -176,7 +202,7 @@ h2 {
   grid-template-columns: auto 1fr;
   gap: 0.85rem;
   align-items: start;
-  padding: 0.75rem 0.7rem;
+  padding: 0.95rem 0.8rem;
   border-radius: 0.85rem;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid transparent;
@@ -224,15 +250,15 @@ h2 {
 }
 
 .foot {
-  padding-top: 0.25rem;
-  padding-bottom: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 2.25rem;
   color: var(--muted);
   font-size: 0.82rem;
   font-family: var(--mono);
 }
 
 .foot p {
-  margin: 0.3rem 0;
+  margin: 0.35rem 0;
 }
 
 .stubs {
@@ -258,26 +284,36 @@ h2 {
 
 @media (max-width: 720px) {
   .sky {
-    opacity: 0.22;
+    opacity: 0.55;
   }
 
   .hero {
-    margin-bottom: 1.35rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-stage {
+    width: 7.5rem;
+    height: 6.25rem;
   }
 }
 
 @media (min-width: 721px) {
   .top {
-    padding-top: 1.75rem;
+    padding-top: 2rem;
   }
 
   main {
-    padding-top: 1rem;
-    padding-bottom: 2.75rem;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
   }
 
   .hero {
-    margin-bottom: 2rem;
+    margin-bottom: 2.75rem;
+  }
+
+  .hero-stage {
+    width: 14rem;
+    height: 8.5rem;
   }
 }
 
