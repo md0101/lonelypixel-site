@@ -107,24 +107,31 @@
 
       var cx = w * 0.52;
       var cy = h * 0.55;
-      var rx = Math.min(w * 0.38, 88);
-      var ry = Math.min(h * 0.32, 38);
+      // More elliptical + permanently slanted
+      var rx = Math.min(w * 0.46, 102);
+      var ry = Math.min(h * 0.22, 28);
+      var tilt = -0.55 + Math.sin((now || 0) / 7000) * 0.04;
       var t = (now || 0) / 1000;
 
-      ctx.strokeStyle = "rgba(124, 240, 194, 0.4)";
-      ctx.lineWidth = 1.25;
+      // Fainter orbit guide
+      ctx.strokeStyle = "rgba(124, 240, 194, 0.18)";
+      ctx.lineWidth = 1;
       ctx.beginPath();
-      ctx.ellipse(cx, cy, rx, ry, Math.sin(t / 5) * 0.15, 0, Math.PI * 2);
+      ctx.ellipse(cx, cy, rx, ry, tilt, 0, Math.PI * 2);
       ctx.stroke();
 
-      ctx.fillStyle = "#f4f0ff";
-      ctx.fillRect(Math.round(cx - 2.5), Math.round(cy - 2.5), 5, 5);
-      ctx.fillStyle = "#7cf0c2";
-      ctx.fillRect(Math.round(cx + 2), Math.round(cy - 5), 2.5, 2.5);
-
-      var a = t * 0.75;
-      var px = cx + Math.cos(a) * rx;
-      var py = cy + Math.sin(a) * ry;
+      // Pixel path slightly off-course (wobble + radius drift) — no centre pixel
+      var a = t * 0.72;
+      var wobble = 1 + 0.08 * Math.sin(a * 2.3) + 0.05 * Math.sin(a * 0.7 + 1.1);
+      var offA = a + 0.12 * Math.sin(a * 1.6);
+      var prx = rx * wobble;
+      var pry = ry * (0.92 + 0.1 * Math.sin(a * 1.9));
+      var cosT = Math.cos(tilt);
+      var sinT = Math.sin(tilt);
+      var lx = Math.cos(offA) * prx;
+      var ly = Math.sin(offA) * pry;
+      var px = cx + lx * cosT - ly * sinT;
+      var py = cy + lx * sinT + ly * cosT;
       ctx.fillStyle = "#7cf0c2";
       ctx.fillRect(Math.round(px - 2), Math.round(py - 2), 4, 4);
     }
