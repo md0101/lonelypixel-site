@@ -11,6 +11,8 @@
   --radius: 1.25rem;
   --font: "Space Grotesk", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --pad-x: 1.25rem;
+  --measure: 44rem;
 }
 
 *,
@@ -73,23 +75,33 @@ main,
 .foot {
   position: relative;
   z-index: 1;
+  max-width: var(--measure);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
 }
 
+/* Tight top: mark sits close to the big title */
 .top {
-  padding: 1.25rem 1.25rem 0;
-  max-width: 44rem;
-  margin: 0 auto;
+  padding-top: 1.25rem;
+  padding-bottom: 0;
 }
 
 .mark {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.55rem;
   margin: 0;
   font-family: var(--mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
   color: var(--muted);
+}
+
+.mark-orbit {
+  color: var(--mint);
+  text-transform: none;
 }
 
 .pixel {
@@ -98,78 +110,65 @@ main,
   background: var(--ink);
   box-shadow: 0.35rem -0.35rem 0 var(--mint);
   display: inline-block;
+  flex-shrink: 0;
 }
 
 main {
-  max-width: 44rem;
-  margin: 0 auto;
-  padding: 2.5rem 1.25rem 3rem;
-}
-
-
-.mark-orbit {
-  color: var(--mint);
-  text-transform: none;
-  letter-spacing: 0.06em;
-  font-size: 0.8rem;
+  padding-top: 0.85rem;
+  padding-bottom: 2.25rem;
 }
 
 .hero {
-  margin-top: 1.75rem;
-}
-
-.hero {
-  margin-bottom: 2.75rem;
-}
-
-.eyebrow {
-  margin: 0 0 0.75rem;
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--mint);
+  margin: 0 0 1.75rem;
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(2.6rem, 10vw, 4.4rem);
+  font-size: clamp(2.5rem, 11vw, 4.2rem);
   line-height: 0.95;
   letter-spacing: -0.04em;
   font-weight: 700;
 }
 
 .tagline {
-  margin: 1rem 0 0;
-  font-size: clamp(1.05rem, 3.5vw, 1.35rem);
+  margin: 0.65rem 0 0;
+  font-size: clamp(1.05rem, 3.5vw, 1.3rem);
   color: var(--lilac);
   font-weight: 500;
 }
 
-.lede {
-  margin: 1.25rem 0 0;
-  max-width: 32rem;
-  color: var(--muted);
-  font-size: 1.05rem;
+.hero-orbit {
+  display: none;
+  margin: 1.1rem 0 0;
+  width: 100%;
+  max-width: 20rem;
+  height: 7.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  background: rgba(20, 18, 37, 0.55);
+  box-shadow: var(--glow);
+  overflow: hidden;
 }
 
-.orbit-card,
-.note {
+#pixel-orbit {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.orbit-card {
+  margin: 0;
   background: linear-gradient(160deg, rgba(20, 18, 37, 0.92), rgba(11, 10, 18, 0.85));
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.35rem 1.25rem;
+  padding: 1.15rem 1.1rem;
   box-shadow: var(--glow);
   backdrop-filter: blur(8px);
 }
 
-.orbit-card {
-  margin-bottom: 1.25rem;
-}
-
 h2 {
-  margin: 0 0 1rem;
-  font-size: 0.8rem;
+  margin: 0 0 0.85rem;
+  font-size: 0.75rem;
   font-family: var(--mono);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -182,16 +181,16 @@ h2 {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 1rem;
+  gap: 0.65rem;
 }
 
 .apps li {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 0.9rem;
+  gap: 0.85rem;
   align-items: start;
-  padding: 0.85rem 0.75rem;
-  border-radius: 0.9rem;
+  padding: 0.75rem 0.7rem;
+  border-radius: 0.85rem;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid transparent;
   transition: border-color 0.2s ease, background 0.2s ease;
@@ -217,42 +216,36 @@ h2 {
 
 .apps h3 {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   letter-spacing: -0.02em;
 }
 
 .apps p {
-  margin: 0.25rem 0 0;
+  margin: 0.2rem 0 0;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 }
 
 .status {
   font-family: var(--mono);
-  font-size: 0.72rem !important;
+  font-size: 0.7rem !important;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink) !important;
   opacity: 0.7;
-  margin-top: 0.45rem !important;
-}
-
-.note p {
-  margin: 0;
-  color: var(--muted);
+  margin-top: 0.4rem !important;
 }
 
 .foot {
-  max-width: 44rem;
-  margin: 0 auto;
-  padding: 0 1.25rem 2.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 2rem;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-family: var(--mono);
 }
 
 .foot p {
-  margin: 0.35rem 0;
+  margin: 0.3rem 0;
 }
 
 .stubs {
@@ -262,39 +255,18 @@ h2 {
   align-items: center;
 }
 
+.stubs a {
+  text-decoration: none;
+}
+
+.stubs a:hover,
+.stubs a:focus {
+  color: var(--ink);
+}
+
 .domain {
   color: var(--lilac);
   opacity: 0.85;
-}
-
-@media (min-width: 640px) {
-  main {
-    padding-top: 3.5rem;
-  }
-
-  .apps {
-    gap: 0.75rem;
-  }
-}
-
-
-.hero-orbit {
-  display: none;
-  margin: 1.5rem 0 0;
-  width: 100%;
-  max-width: 22rem;
-  height: 9rem;
-  border-radius: 1rem;
-  border: 1px solid var(--line);
-  background: rgba(20, 18, 37, 0.55);
-  box-shadow: var(--glow);
-  overflow: hidden;
-}
-
-#pixel-orbit {
-  display: block;
-  width: 100%;
-  height: 100%;
 }
 
 @media (max-width: 720px) {
@@ -302,15 +274,27 @@ h2 {
     display: block;
   }
 
-  /* Background sky is easy to miss on small screens — hero orbit carries the motion */
   .sky {
     opacity: 0.28;
   }
+
+  .hero {
+    margin-bottom: 1.35rem;
+  }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-orbit {
-    display: block;
+@media (min-width: 721px) {
+  .top {
+    padding-top: 1.75rem;
+  }
+
+  main {
+    padding-top: 1rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .hero {
+    margin-bottom: 2rem;
   }
 }
 
@@ -321,5 +305,9 @@ h2 {
 
   .sky {
     display: none;
+  }
+
+  .hero-orbit {
+    display: block;
   }
 }
