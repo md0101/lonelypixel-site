@@ -265,6 +265,43 @@ h2 {
   }
 }
 
+
+.hero-orbit {
+  display: none;
+  margin: 1.5rem 0 0;
+  width: 100%;
+  max-width: 22rem;
+  height: 9rem;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  background: rgba(20, 18, 37, 0.55);
+  box-shadow: var(--glow);
+  overflow: hidden;
+}
+
+#pixel-orbit {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 720px) {
+  .hero-orbit {
+    display: block;
+  }
+
+  /* Background sky is easy to miss on small screens — hero orbit carries the motion */
+  .sky {
+    opacity: 0.28;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-orbit {
+    display: block;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
